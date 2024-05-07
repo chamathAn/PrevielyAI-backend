@@ -4,6 +4,6 @@ const {authonticateToken } = require('../middlewares/authonticateToken');
 
 routes.post('/', authonticateToken, createPost);
 routes.get('/', getAllPosts);
-routes.get('/:id', authonticateToken,getPost);
+routes.get('/:id',getPost);
 
 module.exports = routes
