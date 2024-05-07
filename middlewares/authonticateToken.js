@@ -5,14 +5,7 @@ require("dotenv").config();
 const public_key = process.env.CLERK_PUBLIC_KEY;
 
 const authonticateToken = (req, res, next) => {
-    ClerkExpressRequireAuth({
-        audience: "https://previely-ai-frontend.vercel.app",
-        authorizedParties: ["https://previely-ai-frontend.vercel.app"],
-        jwtKey: public_key,
-        onerror: (err) => {
-            next(createError(401, err.message));
-        },
-    })(req, res, next); // Call the middleware function
+    ClerkExpressRequireAuth({})(req, res, next); // Call the middleware function
 };
 
 module.exports = { authonticateToken };
