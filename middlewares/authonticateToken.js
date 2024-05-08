@@ -6,8 +6,8 @@ const public_key = process.env.CLERK_PUBLIC_KEY;
 
 const authonticateToken = (req, res, next) => {
     ClerkExpressRequireAuth({
-        audience: "https://previely-ai-frontend.vercel.app",
-        authorizedParties: ["https://previely-ai-frontend.vercel.app"],
+        audience: "https://previelyai.top",
+        authorizedParties: ["https://previelyai.top"],
         jwtKey: public_key,
         onerror: (err) => {
             next(createError(401, err.message));
